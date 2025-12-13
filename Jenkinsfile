@@ -2,8 +2,7 @@ pipeline {
   agent any
 
   options {
-    timestamps()
-    ansiColor('xterm')
+       timestamps()
   }
 
   environment {
