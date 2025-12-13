@@ -1,17 +1,16 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven:3.9.6-eclipse-temurin-17'
-      args '-v /root/.m2:/root/.m2'
-    }
-  }
+  agent any
 
   options {
     timestamps()
   }
 
+  tools {
+    maven 'Maven3'
+  }
+
   environment {
-    MAVEN_OPTS = '-Dmaven.repo.local=/root/.m2/repository'
+    MAVEN_OPTS = '-Dmaven.repo.local=.m2/repository'
   }
 
   stages {
